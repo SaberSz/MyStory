@@ -85,21 +85,21 @@
 				<h2 class="mg-md text-center">
 					Sign In
 				</h2>
-				<form id="form_2017" novalidate>
+				<form id="form_2017" novalidate action="/signup" method="post">
 					<div class="form-group">
 						<label>
 							Email/Username<br>
 						</label>
-						<input class="form-control" id="input_589" />
+						<input class="form-control" id="input_589" type="text" name="email"/>
 					</div>
 					<div class="form-group">
 						<label>
 							Password
 						</label>
-						<input class="form-control" id="input_463" />
+						<input class="form-control" id="input_463" type="Password" name="passin" />
 					</div>
 					<div class="text-center">
-						<a href="index.html" class="btn btn-d btn-lg none">Sign In</a>
+						<input name="submit" class="btn btn-d btn-lg none" type="submit" value="Sign In"/>
 					</div>
 				</form>
 			</div>
@@ -121,28 +121,28 @@
 						<label>
 							Username
 						</label>
-						<input class="form-control" id="input_1932" />
-					</div>
+						<input class="form-control" id="input_1932cr" type="text" name="usernameUP"/>
+					</div>    
 					<div class="form-group">
 						<label>
 							Email
 						</label>
-						<input class="form-control" id="input_2229" />
+						<input class="form-control" id="input_2229" type="text" name="emailup" />
 					</div>
 					<div class="form-group">
 						<label>
 							Password
 						</label>
-						<input class="form-control" id="input_996" />
+						<input class="form-control" id="input_996" type="Password" name="passup" />
 					</div>
 					<div class="form-group">
 						<label>
 							Re-enter Password
 						</label>
-						<input class="form-control" id="input_1103" />
+						<input class="form-control" id="input_1103" type="Password" name="repassup" />
 					</div>
 					<div class="text-center">
-						<a href="index.html" class="btn btn-d btn-lg">Sign Up</a>
+						<input name="submit" class="btn btn-d btn-lg" type="submit" value="Sign Up"/>
 					</div>
 				</form>
 			</div>

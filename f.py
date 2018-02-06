@@ -4,7 +4,7 @@ Created on 02-Feb-2018
 @author: dylan
 '''
 import mysql.connector as ms
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 app = Flask(__name__)
 #cnx = ms.connect(unix_socket= '/Applications/MAMP/tmp/mysql/mysql.sock', user='root', password='root', host='localhost', database='snp',)
 
@@ -14,9 +14,35 @@ app = Flask(__name__)
 def hello():
     return 'Hello, World'
 
-@app.route('/index.html')
+@app.route('/index.html', methods = ['GET', 'POST'])
 def login():
-   return render_template('index.html')
+	if request.method == 'POST':
+		if request.form['submit'] == 'Sign Up':
+			if checkSignUp(request.form['usernameUP'],request.form['emailup'],request.form['passup'],request.form['repassup']):
+				return render_template('home.html')
+				flash('Inside signup')
+				return render_template('home.html')
+			else:
+				flash('Inside signup else')
+		elif request.form['submit'] == 'Sign IN':
+			pass # do something else
+	else:
+		pass
+	return render_template('index.html')
+
+
+def checkSignUp(a,b,c,d):
+
+  	cnx = ms.connect(user='root', password='root',host='localhost', database='mystory')
+  	try:
+  		return true
+  		cur=cnx.cursor()
+  		cur.execute("Select * from people ;")
+  		d= cur.fetchall()
+  		cnx.commit()
+	except:
+		flash('chutiyaypa ')
+		return false
 
 @app.route('/home.html')
 def home():
